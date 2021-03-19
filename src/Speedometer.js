@@ -49,8 +49,6 @@ const Speedometer = () => {
         options.ctx.globalAlpha = 0.8;
         var gradient = options.ctx.createLinearGradient(0, 0, 170, 0);
         gradient.addColorStop("0", "#ffa31a");
-
-        // Fill with gradient
         options.ctx.strokeStyle = gradient;
         console.log('temp1 ' + temp1)
         console.log('temp2 '+ temp2)
@@ -62,7 +60,6 @@ const Speedometer = () => {
             Math.PI - temp1,
             2 * Math.PI + temp2,
         );
-        //options.ctx.fill();
         options.ctx.lineWidth = 10;
         options.ctx.stroke();
     }
@@ -71,8 +68,6 @@ const Speedometer = () => {
     {
         options.ctx.beginPath();
         options.ctx.fillStyle = "rgb(0,0,0)";
-    
-        // Outer circle (subtle edge in white->grey)
         options.ctx.arc(options.center.X,
                         options.center.Y,
                         100,
@@ -180,10 +175,10 @@ const Speedometer = () => {
     function showMeterValue(options)
     {
         options.ctx.globalAlpha = 0.8;
-        options.ctx.font = "40px serif"; 
+        options.ctx.font = "46px serif"; 
         options.ctx.fillStyle = "#ffffff"; 
         console.log('Speeed' + digitalSpeed)
-        options.ctx.fillText(digitalSpeed, 280, 250)
+        options.ctx.fillText(digitalSpeed, 150, 235)
     }
 
     function showRange(options)
@@ -193,7 +188,7 @@ const Speedometer = () => {
         options.ctx.fillStyle = "#ff9900"; 
  
         let string = "Km/h"
-        options.ctx.fillText(string, 375, 275)
+        options.ctx.fillText(string, 260, 265)
     }
 
     function drawLargeTickMarks(options)
@@ -332,8 +327,8 @@ const Speedometer = () => {
     
     const buildOptionsAsJSON = (canvas) => {
 
-        var centerX = 330,
-            centerY = 330,
+        var centerX = 210,
+            centerY = 300,
             radius = 170,
             outerRadius = 210;
                 
@@ -360,8 +355,10 @@ const Speedometer = () => {
     })
     
     return (
-        <div className='Parent'>
-            <canvas ref={canvasRef} width={600} height={600} />
+        <div>
+            <div  className='Parent'>
+                <canvas ref={canvasRef} width={600} height={600} className='Canvas' />
+                </div>
         </div>
     )
 }

@@ -1,5 +1,13 @@
 .Parent {
-  height: 635px;
-  width: 100%;
+  height: 200%;
+  width: 200%;
+
   background: black;
+  display: flex;
+  justify-items: left;
+  justify-content: flex-start;
+}
+
+.Canvas {
+  margin-left: 0;
 }
